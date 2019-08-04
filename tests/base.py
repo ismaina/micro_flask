@@ -15,3 +15,9 @@ class BaseTestCase(TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+
+class BaseConfig:
+    """Base configuration"""
+    TESTING = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'my_precious'  # new
